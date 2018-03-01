@@ -38,8 +38,12 @@ class Player(object):
         pass
 
     def play(self, data):
-        self.aplay = subprocess.Popen('aplay -', stdin=subprocess.PIPE, shell=True)
-        self.aplay.stdin.write(data)
+        with open('/tmp/speech.wav', 'w') as f:
+            f.write(data)
+
+        subprocess.call('aplay -Dplughw:0,1 /tmp/speech.wav', shell=True)
+        #self.aplay = subprocess.Popen('aplay -', stdin=subprocess.PIPE, shell=True)
+        #self.aplay.stdin.write(data)
 
 
 def get_wave_header(frame_rate):

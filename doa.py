@@ -30,13 +30,14 @@ if os.geteuid() != 0 :
 en.dir(mraa.DIR_OUT)
 en.write(0)
 
+pixel_ring.change_pattern('echo')
 pixel_ring.set_brightness(20)
 
 eps = np.finfo(float).eps
 
 
 class DOA(Element):
-    def __init__(self, channels=8, ns=True, agc=0):
+    def __init__(self, channels=8, ns=False, agc=0):
         super(DOA, self).__init__()
 
         self.channels = channels
@@ -46,7 +47,7 @@ class DOA(Element):
         self.frame_size = 160
         self.frame_bytes = self.frame_size * self.channels * 2
 
-        self.ap = AP(enable_ns=ns, agc_type=agc, enable_vad=True)
+        self.ap = AP(enable_ns=ns, agc_type=agc)
         self.ap.set_stream_format(16000, 1)
 
         self.queue = queue.Queue()

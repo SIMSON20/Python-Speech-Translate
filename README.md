@@ -54,6 +54,7 @@ Run the example with:
 
 ```
 pip install https://github.com/xiongyihui/python-webrtc-audio-processing/archive/master.zip
-pip install voice-engine pixel-ring
+pip install https://github.com/voice-engine/voice-engine/archive/master.zip
+pip install pixel-ring
 python main.py
 ```
