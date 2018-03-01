@@ -22,7 +22,7 @@ Run the example with:
 python languages.py
 ```
 
-## Speech Translate (speech.py)
+## Audio file translate (speech.py)
 This sample demonstrates the use of Microsoft Translator Speech Translation API by translating an audio file.
 
 Before running the example.
@@ -41,6 +41,19 @@ Run the example with:
 python speech.py
 ```
 
-## Getting an authentication token from the Azure platform (auth.py)
-This class illustrates how to get an authentication token given a client secret. The client secret is the key associated with your Azure Cognitive Services subscription for the Speech Translation API. The value of the key is available in the Azure developer portal.
+## Realtime speech translate (main.py)
+This sample demonstrates the use of Microsoft Translator Speech Translation API
 
+Before running the example.
+
+1. Fill your Azure Data Market Credentials
+
+   ```client_secret = 'INSERT YOUR CLIENT SECRET'```
+
+Run the example with:
+
+```
+pip install https://github.com/xiongyihui/python-webrtc-audio-processing/archive/master.zip
+pip install voice-engine pixel-ring
+python main.py
+```
